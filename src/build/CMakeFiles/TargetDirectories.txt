@@ -1,0 +1,10 @@
+/Users/vitah/repo/algo/Algorithm/src/build/CMakeFiles/edit_cache.dir
+/Users/vitah/repo/algo/Algorithm/src/build/CMakeFiles/rebuild_cache.dir
+/Users/vitah/repo/algo/Algorithm/src/build/lib/CMakeFiles/collatzlib.dir
+/Users/vitah/repo/algo/Algorithm/src/build/lib/CMakeFiles/edit_cache.dir
+/Users/vitah/repo/algo/Algorithm/src/build/lib/CMakeFiles/rebuild_cache.dir
+/Users/vitah/repo/algo/Algorithm/src/build/app/CMakeFiles/app.dir
+/Users/vitah/repo/algo/Algorithm/src/build/app/CMakeFiles/edit_cache.dir
+/Users/vitah/repo/algo/Algorithm/src/build/app/CMakeFiles/rebuild_cache.dir
+/Users/vitah/repo/algo/Algorithm/src/build/app/CMakeFiles/app_autogen_timestamp_deps.dir
+/Users/vitah/repo/algo/Algorithm/src/build/app/CMakeFiles/app_autogen.dir

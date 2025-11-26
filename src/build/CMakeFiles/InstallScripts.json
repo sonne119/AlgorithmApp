@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/vitah/repo/algo/Algorithm/src/build/cmake_install.cmake",
+		"/Users/vitah/repo/algo/Algorithm/src/build/lib/cmake_install.cmake",
+		"/Users/vitah/repo/algo/Algorithm/src/build/app/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcollatzlib.a CMakeFiles/collatzlib.dir/collatz.cpp.o
+/usr/bin/ranlib libcollatzlib.a

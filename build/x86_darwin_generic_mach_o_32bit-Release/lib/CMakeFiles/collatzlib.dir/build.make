@@ -69,13 +69,34 @@ include lib/CMakeFiles/collatzlib.dir/progress.make
 # Include the compile flags for this target's objects.
 include lib/CMakeFiles/collatzlib.dir/flags.make
 
+lib/collatzlib_autogen/timestamp: /opt/homebrew/share/qt/libexec/moc
+lib/collatzlib_autogen/timestamp: /opt/homebrew/share/qt/libexec/uic
+lib/collatzlib_autogen/timestamp: lib/CMakeFiles/collatzlib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target collatzlib"
+	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib && /opt/homebrew/Cellar/cmake/4.2.0/bin/cmake -E cmake_autogen /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib/CMakeFiles/collatzlib_autogen.dir/AutogenInfo.json Release
+	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib && /opt/homebrew/Cellar/cmake/4.2.0/bin/cmake -E touch /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib/collatzlib_autogen/timestamp
+
 lib/CMakeFiles/collatzlib.dir/codegen:
 .PHONY : lib/CMakeFiles/collatzlib.dir/codegen
+
+lib/CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.o: lib/CMakeFiles/collatzlib.dir/flags.make
+lib/CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.o: lib/collatzlib_autogen/mocs_compilation.cpp
+lib/CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.o: lib/CMakeFiles/collatzlib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object lib/CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.o"
+	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.o -MF CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.o -c /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib/collatzlib_autogen/mocs_compilation.cpp
+
+lib/CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.i"
+	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib/collatzlib_autogen/mocs_compilation.cpp > CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.i
+
+lib/CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.s"
+	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib/collatzlib_autogen/mocs_compilation.cpp -o CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.s
 
 lib/CMakeFiles/collatzlib.dir/collatz.cpp.o: lib/CMakeFiles/collatzlib.dir/flags.make
 lib/CMakeFiles/collatzlib.dir/collatz.cpp.o: /Users/vitah/TaoGit/777/AlgorithmApp/lib/collatz.cpp
 lib/CMakeFiles/collatzlib.dir/collatz.cpp.o: lib/CMakeFiles/collatzlib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/CMakeFiles/collatzlib.dir/collatz.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object lib/CMakeFiles/collatzlib.dir/collatz.cpp.o"
 	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/collatzlib.dir/collatz.cpp.o -MF CMakeFiles/collatzlib.dir/collatz.cpp.o.d -o CMakeFiles/collatzlib.dir/collatz.cpp.o -c /Users/vitah/TaoGit/777/AlgorithmApp/lib/collatz.cpp
 
 lib/CMakeFiles/collatzlib.dir/collatz.cpp.i: cmake_force
@@ -88,15 +109,17 @@ lib/CMakeFiles/collatzlib.dir/collatz.cpp.s: cmake_force
 
 # Object files for target collatzlib
 collatzlib_OBJECTS = \
+"CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/collatzlib.dir/collatz.cpp.o"
 
 # External object files for target collatzlib
 collatzlib_EXTERNAL_OBJECTS =
 
+lib/libcollatzlib.a: lib/CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.o
 lib/libcollatzlib.a: lib/CMakeFiles/collatzlib.dir/collatz.cpp.o
 lib/libcollatzlib.a: lib/CMakeFiles/collatzlib.dir/build.make
 lib/libcollatzlib.a: lib/CMakeFiles/collatzlib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libcollatzlib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libcollatzlib.a"
 	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib && $(CMAKE_COMMAND) -P CMakeFiles/collatzlib.dir/cmake_clean_target.cmake
 	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/collatzlib.dir/link.txt --verbose=$(VERBOSE)
 
@@ -108,7 +131,7 @@ lib/CMakeFiles/collatzlib.dir/clean:
 	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib && $(CMAKE_COMMAND) -P CMakeFiles/collatzlib.dir/cmake_clean.cmake
 .PHONY : lib/CMakeFiles/collatzlib.dir/clean
 
-lib/CMakeFiles/collatzlib.dir/depend:
+lib/CMakeFiles/collatzlib.dir/depend: lib/collatzlib_autogen/timestamp
 	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/vitah/TaoGit/777/AlgorithmApp /Users/vitah/TaoGit/777/AlgorithmApp/lib /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib/CMakeFiles/collatzlib.dir/DependInfo.cmake "--color=$(COLOR)" collatzlib
 .PHONY : lib/CMakeFiles/collatzlib.dir/depend
 

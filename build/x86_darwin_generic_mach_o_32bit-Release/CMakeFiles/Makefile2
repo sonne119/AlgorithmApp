@@ -120,21 +120,24 @@ lib/preinstall:
 
 # Recursive "clean" directory target.
 lib/clean: lib/CMakeFiles/collatzlib.dir/clean
+lib/clean: lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/clean
+lib/clean: lib/CMakeFiles/collatzlib_autogen.dir/clean
 .PHONY : lib/clean
 
 #=============================================================================
 # Target rules for target lib/CMakeFiles/collatzlib.dir
 
 # All Build rule for target.
-lib/CMakeFiles/collatzlib.dir/all:
+lib/CMakeFiles/collatzlib.dir/all: lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/all
+lib/CMakeFiles/collatzlib.dir/all: lib/CMakeFiles/collatzlib_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib.dir/build.make lib/CMakeFiles/collatzlib.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib.dir/build.make lib/CMakeFiles/collatzlib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=7,8 "Built target collatzlib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=8,9,10,11 "Built target collatzlib"
 .PHONY : lib/CMakeFiles/collatzlib.dir/all
 
 # Build rule for subdir invocation for target.
 lib/CMakeFiles/collatzlib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/collatzlib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 0
 .PHONY : lib/CMakeFiles/collatzlib.dir/rule
@@ -144,9 +147,9 @@ collatzlib: lib/CMakeFiles/collatzlib.dir/rule
 .PHONY : collatzlib
 
 # codegen rule for target.
-lib/CMakeFiles/collatzlib.dir/codegen:
+lib/CMakeFiles/collatzlib.dir/codegen: lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib.dir/build.make lib/CMakeFiles/collatzlib.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=7,8 "Finished codegen for target collatzlib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=8,9,10,11 "Finished codegen for target collatzlib"
 .PHONY : lib/CMakeFiles/collatzlib.dir/codegen
 
 # clean rule for target.
@@ -155,20 +158,84 @@ lib/CMakeFiles/collatzlib.dir/clean:
 .PHONY : lib/CMakeFiles/collatzlib.dir/clean
 
 #=============================================================================
+# Target rules for target lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir
+
+# All Build rule for target.
+lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/all:
+	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/build.make lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/depend
+	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/build.make lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num= "Built target collatzlib_autogen_timestamp_deps"
+.PHONY : lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/all
+
+# Build rule for subdir invocation for target.
+lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 0
+.PHONY : lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/rule
+
+# Convenience name for target.
+collatzlib_autogen_timestamp_deps: lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/rule
+.PHONY : collatzlib_autogen_timestamp_deps
+
+# codegen rule for target.
+lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/build.make lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num= "Finished codegen for target collatzlib_autogen_timestamp_deps"
+.PHONY : lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/codegen
+
+# clean rule for target.
+lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/clean:
+	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/build.make lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/clean
+.PHONY : lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/clean
+
+#=============================================================================
+# Target rules for target lib/CMakeFiles/collatzlib_autogen.dir
+
+# All Build rule for target.
+lib/CMakeFiles/collatzlib_autogen.dir/all: lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib_autogen.dir/build.make lib/CMakeFiles/collatzlib_autogen.dir/depend
+	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib_autogen.dir/build.make lib/CMakeFiles/collatzlib_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=12 "Built target collatzlib_autogen"
+.PHONY : lib/CMakeFiles/collatzlib_autogen.dir/all
+
+# Build rule for subdir invocation for target.
+lib/CMakeFiles/collatzlib_autogen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/collatzlib_autogen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 0
+.PHONY : lib/CMakeFiles/collatzlib_autogen.dir/rule
+
+# Convenience name for target.
+collatzlib_autogen: lib/CMakeFiles/collatzlib_autogen.dir/rule
+.PHONY : collatzlib_autogen
+
+# codegen rule for target.
+lib/CMakeFiles/collatzlib_autogen.dir/codegen: lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib_autogen.dir/build.make lib/CMakeFiles/collatzlib_autogen.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=12 "Finished codegen for target collatzlib_autogen"
+.PHONY : lib/CMakeFiles/collatzlib_autogen.dir/codegen
+
+# clean rule for target.
+lib/CMakeFiles/collatzlib_autogen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib_autogen.dir/build.make lib/CMakeFiles/collatzlib_autogen.dir/clean
+.PHONY : lib/CMakeFiles/collatzlib_autogen.dir/clean
+
+#=============================================================================
 # Target rules for target app/CMakeFiles/app.dir
 
 # All Build rule for target.
+app/CMakeFiles/app.dir/all: lib/CMakeFiles/collatzlib.dir/all
 app/CMakeFiles/app.dir/all: app/CMakeFiles/app_autogen_timestamp_deps.dir/all
 app/CMakeFiles/app.dir/all: app/CMakeFiles/app_autogen.dir/all
-app/CMakeFiles/app.dir/all: lib/CMakeFiles/collatzlib.dir/all
 	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/app.dir/build.make app/CMakeFiles/app.dir/depend
 	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/app.dir/build.make app/CMakeFiles/app.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=1,2,3,4,5 "Built target app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target app"
 .PHONY : app/CMakeFiles/app.dir/all
 
 # Build rule for subdir invocation for target.
 app/CMakeFiles/app.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/app.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 0
 .PHONY : app/CMakeFiles/app.dir/rule
@@ -181,7 +248,7 @@ app: app/CMakeFiles/app.dir/rule
 app/CMakeFiles/app.dir/codegen: app/CMakeFiles/app_autogen_timestamp_deps.dir/all
 app/CMakeFiles/app.dir/codegen: app/CMakeFiles/app_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/app.dir/build.make app/CMakeFiles/app.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=1,2,3,4,5 "Finished codegen for target app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target app"
 .PHONY : app/CMakeFiles/app.dir/codegen
 
 # clean rule for target.
@@ -201,7 +268,7 @@ app/CMakeFiles/app_autogen_timestamp_deps.dir/all: lib/CMakeFiles/collatzlib.dir
 
 # Build rule for subdir invocation for target.
 app/CMakeFiles/app_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/app_autogen_timestamp_deps.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 0
 .PHONY : app/CMakeFiles/app_autogen_timestamp_deps.dir/rule
@@ -228,12 +295,12 @@ app/CMakeFiles/app_autogen_timestamp_deps.dir/clean:
 app/CMakeFiles/app_autogen.dir/all: app/CMakeFiles/app_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/app_autogen.dir/build.make app/CMakeFiles/app_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/app_autogen.dir/build.make app/CMakeFiles/app_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=6 "Built target app_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=7 "Built target app_autogen"
 .PHONY : app/CMakeFiles/app_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 app/CMakeFiles/app_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/app_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 0
 .PHONY : app/CMakeFiles/app_autogen.dir/rule
@@ -245,7 +312,7 @@ app_autogen: app/CMakeFiles/app_autogen.dir/rule
 # codegen rule for target.
 app/CMakeFiles/app_autogen.dir/codegen: app/CMakeFiles/app_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/app_autogen.dir/build.make app/CMakeFiles/app_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=6 "Finished codegen for target app_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=7 "Finished codegen for target app_autogen"
 .PHONY : app/CMakeFiles/app_autogen.dir/codegen
 
 # clean rule for target.

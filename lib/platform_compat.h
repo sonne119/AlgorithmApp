@@ -2,6 +2,11 @@
 #define PLATFORM_COMPAT_H
 
 #ifdef _WIN32
+
+     #ifndef NOMINMAX
+        #define NOMINMAX
+     #endif
+
     // Windows
     #include <io.h>
     #include <windows.h>

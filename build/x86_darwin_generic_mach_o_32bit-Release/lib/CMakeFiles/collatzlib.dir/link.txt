@@ -1,2 +1,2 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcollatzlib.a CMakeFiles/collatzlib.dir/collatz.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcollatzlib.a CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.o CMakeFiles/collatzlib.dir/collatz.cpp.o
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcollatzlib.a

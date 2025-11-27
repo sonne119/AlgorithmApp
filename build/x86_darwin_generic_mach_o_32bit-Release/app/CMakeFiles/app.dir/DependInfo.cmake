@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "" "app/app_autogen/timestamp" "custom" "app/app_autogen/deps"
   "/Users/vitah/TaoGit/777/AlgorithmApp/app/CollatzRunner.cpp" "app/CMakeFiles/app.dir/CollatzRunner.cpp.o" "gcc" "app/CMakeFiles/app.dir/CollatzRunner.cpp.o.d"
   "/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app/app_autogen/mocs_compilation.cpp" "app/CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o" "gcc" "app/CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o.d"
   "/Users/vitah/TaoGit/777/AlgorithmApp/app/main.cpp" "app/CMakeFiles/app.dir/main.cpp.o" "gcc" "app/CMakeFiles/app.dir/main.cpp.o.d"

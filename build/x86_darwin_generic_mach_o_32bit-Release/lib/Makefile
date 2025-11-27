@@ -92,13 +92,6 @@ all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 0
 .PHONY : all
 
-# The main codegen target
-codegen: cmake_check_build_system
-	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release && $(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib//CMakeFiles/progress.marks
-	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 0
-.PHONY : codegen
-
 # The main clean target
 clean:
 	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/clean
@@ -137,6 +130,34 @@ collatzlib/fast:
 	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib.dir/build.make lib/CMakeFiles/collatzlib.dir/build
 .PHONY : collatzlib/fast
 
+# Convenience name for target.
+lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/rule:
+	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/rule
+.PHONY : lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/rule
+
+# Convenience name for target.
+collatzlib_autogen_timestamp_deps: lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/rule
+.PHONY : collatzlib_autogen_timestamp_deps
+
+# fast build rule for target.
+collatzlib_autogen_timestamp_deps/fast:
+	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/build.make lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/build
+.PHONY : collatzlib_autogen_timestamp_deps/fast
+
+# Convenience name for target.
+lib/CMakeFiles/collatzlib_autogen.dir/rule:
+	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/collatzlib_autogen.dir/rule
+.PHONY : lib/CMakeFiles/collatzlib_autogen.dir/rule
+
+# Convenience name for target.
+collatzlib_autogen: lib/CMakeFiles/collatzlib_autogen.dir/rule
+.PHONY : collatzlib_autogen
+
+# fast build rule for target.
+collatzlib_autogen/fast:
+	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib_autogen.dir/build.make lib/CMakeFiles/collatzlib_autogen.dir/build
+.PHONY : collatzlib_autogen/fast
+
 collatz.o: collatz.cpp.o
 .PHONY : collatz.o
 
@@ -161,19 +182,47 @@ collatz.cpp.s:
 	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib.dir/build.make lib/CMakeFiles/collatzlib.dir/collatz.cpp.s
 .PHONY : collatz.cpp.s
 
+collatzlib_autogen/mocs_compilation.o: collatzlib_autogen/mocs_compilation.cpp.o
+.PHONY : collatzlib_autogen/mocs_compilation.o
+
+# target to build an object file
+collatzlib_autogen/mocs_compilation.cpp.o:
+	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib.dir/build.make lib/CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.o
+.PHONY : collatzlib_autogen/mocs_compilation.cpp.o
+
+collatzlib_autogen/mocs_compilation.i: collatzlib_autogen/mocs_compilation.cpp.i
+.PHONY : collatzlib_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+collatzlib_autogen/mocs_compilation.cpp.i:
+	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib.dir/build.make lib/CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.i
+.PHONY : collatzlib_autogen/mocs_compilation.cpp.i
+
+collatzlib_autogen/mocs_compilation.s: collatzlib_autogen/mocs_compilation.cpp.s
+.PHONY : collatzlib_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+collatzlib_autogen/mocs_compilation.cpp.s:
+	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib.dir/build.make lib/CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.s
+.PHONY : collatzlib_autogen/mocs_compilation.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... codegen"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... collatzlib_autogen"
+	@echo "... collatzlib_autogen_timestamp_deps"
 	@echo "... collatzlib"
 	@echo "... collatz.o"
 	@echo "... collatz.i"
 	@echo "... collatz.s"
+	@echo "... collatzlib_autogen/mocs_compilation.o"
+	@echo "... collatzlib_autogen/mocs_compilation.i"
+	@echo "... collatzlib_autogen/mocs_compilation.s"
 .PHONY : help
 
 

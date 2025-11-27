@@ -12,6 +12,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/app.dir/mainwindow.cpp.o.d"
   "app"
   "app.pdb"
+  "app_autogen/mocs_compilation.cpp"
+  "app_autogen/timestamp"
 )
 
 # Per-language clean rules from dependency scanning.

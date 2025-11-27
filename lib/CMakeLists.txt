@@ -1,7 +1,7 @@
 
 if(MSVC)
     # Windows
-    add_compile_options(/W4 /EHsc)
+    add_compile_options(/W4 /EHsc /wd4324)
     add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
 else()
     # Unix/macOS
@@ -23,18 +23,16 @@ add_library(collatzlib STATIC
 )
 
 if(MSVC)
-    target_compile_options(collatzlib PRIVATE
-        /O2
-        /Oi
-        /GL
-        /favor:AMD64
-    )
     if(CMAKE_BUILD_TYPE STREQUAL "Release")
         target_compile_options(collatzlib PRIVATE
+            /O2
+            /Oi
+            /GL
+            /favor:AMD64
             /fp:fast
         )
         set_target_properties(collatzlib PROPERTIES
-            STATIC_LIBRARY_FLAGS "/LTCG"
+            STATIC_LIBRARY_FLAGS
         )
     endif()
 else()

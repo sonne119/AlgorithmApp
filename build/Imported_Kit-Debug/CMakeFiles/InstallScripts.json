@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/vitah/TaoGit/777/AlgorithmApp/build/Imported_Kit-Debug/cmake_install.cmake",
+		"/Users/vitah/TaoGit/777/AlgorithmApp/build/Imported_Kit-Debug/lib/cmake_install.cmake",
+		"/Users/vitah/TaoGit/777/AlgorithmApp/build/Imported_Kit-Debug/app/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

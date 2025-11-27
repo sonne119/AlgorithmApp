@@ -331,6 +331,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   ".qt/QtDeploySupport.cmake"
   ".qt/QtDeployTargets.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "lib/CMakeFiles/collatzlib_autogen.dir/AutogenInfo.json"
   "lib/CMakeFiles/CMakeDirectoryInformation.cmake"
   "app/CMakeFiles/app_autogen.dir/AutogenInfo.json"
   "app/CMakeFiles/CMakeDirectoryInformation.cmake"
@@ -339,6 +340,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "lib/CMakeFiles/collatzlib.dir/DependInfo.cmake"
+  "lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/DependInfo.cmake"
+  "lib/CMakeFiles/collatzlib_autogen.dir/DependInfo.cmake"
   "app/CMakeFiles/app.dir/DependInfo.cmake"
   "app/CMakeFiles/app_autogen_timestamp_deps.dir/DependInfo.cmake"
   "app/CMakeFiles/app_autogen.dir/DependInfo.cmake"

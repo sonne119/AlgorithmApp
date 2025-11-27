@@ -3,6 +3,8 @@
 /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib/CMakeFiles/collatzlib.dir
 /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib/CMakeFiles/edit_cache.dir
 /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib/CMakeFiles/rebuild_cache.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/lib/CMakeFiles/collatzlib_autogen.dir
 /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app/CMakeFiles/app.dir
 /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app/CMakeFiles/edit_cache.dir
 /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app/CMakeFiles/rebuild_cache.dir

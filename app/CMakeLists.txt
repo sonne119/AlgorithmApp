@@ -15,6 +15,7 @@ add_executable(app
     ${APP_SOURCES}
     ${APP_HEADERS}
     mainwindow.ui
+    CMakeLists.txt
 )
 
 target_include_directories(app PRIVATE

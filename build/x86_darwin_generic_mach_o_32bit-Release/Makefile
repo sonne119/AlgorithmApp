@@ -92,13 +92,6 @@ all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 0
 .PHONY : all
 
-# The main codegen target
-codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles 0
-.PHONY : codegen
-
 # The main clean target
 clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
@@ -135,6 +128,32 @@ collatzlib: cmake_check_build_system
 collatzlib/fast:
 	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib.dir/build.make lib/CMakeFiles/collatzlib.dir/build
 .PHONY : collatzlib/fast
+
+#=============================================================================
+# Target rules for targets named collatzlib_autogen_timestamp_deps
+
+# Build rule for target.
+collatzlib_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 collatzlib_autogen_timestamp_deps
+.PHONY : collatzlib_autogen_timestamp_deps
+
+# fast build rule for target.
+collatzlib_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/build.make lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir/build
+.PHONY : collatzlib_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named collatzlib_autogen
+
+# Build rule for target.
+collatzlib_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 collatzlib_autogen
+.PHONY : collatzlib_autogen
+
+# fast build rule for target.
+collatzlib_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/collatzlib_autogen.dir/build.make lib/CMakeFiles/collatzlib_autogen.dir/build
+.PHONY : collatzlib_autogen/fast
 
 #=============================================================================
 # Target rules for targets named app
@@ -181,11 +200,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... codegen"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... app_autogen"
 	@echo "... app_autogen_timestamp_deps"
+	@echo "... collatzlib_autogen"
+	@echo "... collatzlib_autogen_timestamp_deps"
 	@echo "... app"
 	@echo "... collatzlib"
 .PHONY : help

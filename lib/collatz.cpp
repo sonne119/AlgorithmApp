@@ -12,31 +12,25 @@
 #include <map>
 #include <limits>
 #include <bit>
-#include <unistd.h>
-#include <sys/types.h>
-#include "collatz.h"
 #include "platform_compat.h"
-// #include <boost/asio/thread_pool.hpp>
-// #include <boost/asio/post.hpp>
+#include "collatz.h"
 
 static std::atomic<bool> collatz_logging_enabled{true};
 static std::atomic<int> global_log_fd{-1};
-
 
 // ================= HELPER ========================
 // write to log pipe
 static void write_to_log(const std::string& message) {
     int log_fd = global_log_fd.load(std::memory_order_relaxed);
     if (log_fd != -1) {
-        write(log_fd, message.c_str(), message.length());
+        write(log_fd, message.c_str(), static_cast<unsigned int>(message.length()));
     }
     std::cout << message << std::flush;
 }
 
-
 // ================= CONFIGURATION =================
 constexpr uint64_t CACHE_LIMIT = 1ULL << 27; // 128 MB
-constexpr size_t HIST_SIZE =4096;
+constexpr size_t HIST_SIZE = 4096;
 
 // Global Cache
 std::vector<uint16_t> collatz_cache;
@@ -53,10 +47,8 @@ std::map<uint32_t, uint64_t> global_histogram_map;
 
 // ================= HELPERS =================
 
-
 #if defined(__has_include)
 #  if __has_include(<bit>)
-#    include <bit>
 #    define HAS_STD_COUNTR_ZERO 1
 #  endif
 #endif
@@ -72,7 +64,8 @@ inline void atomic_update_min(std::atomic<T>& atom, T val) {
     T cur = atom.load(std::memory_order_relaxed);
     while (val < cur) if (atom.compare_exchange_weak(cur, val, std::memory_order_relaxed)) break;
 }
-// alternative fast_ctz
+
+// Platform-independent fast_ctz
 inline int fast_ctz(uint64_t n) {
     if (n == 0) return 0;
 #ifdef HAS_STD_COUNTR_ZERO
@@ -128,7 +121,7 @@ void build_cache_parallel() {
                         if ((n & 1) == 0) {
                             int zeros = fast_ctz(n);
                             n >>= zeros;
-                            steps += zeros;
+                            steps += static_cast<uint16_t>(zeros);
                         } else {
                             n = (n * 3 + 1) >> 1;
                             steps += 2;
@@ -150,11 +143,11 @@ void build_cache_parallel() {
 // ================= WORKER LOGIC =================
 
 struct alignas(128) ThreadResult {
-    uint64_t histogram[HIST_SIZE] = {0};  // Local histogram
-    uint64_t max_seed = 0;                // Seed with max length found
-    uint64_t max_peak = 0;                // Max peak found
-    uint64_t first_overflow = INT64_MAX;  // First seed causing overflow found b
-    uint32_t max_length = 0;              // Max length found
+    uint64_t histogram[HIST_SIZE] = {0};
+    uint64_t max_seed = 0;
+    uint64_t max_peak = 0;
+    uint64_t first_overflow = INT64_MAX;
+    uint32_t max_length = 0;
 };
 
 
@@ -166,31 +159,33 @@ static inline void step_hybrid(uint64_t& n, uint32_t& steps, uint64_t& peak,
             if (next_val > peak) peak = next_val;
             int zeros = fast_ctz(next_val);
             n = next_val >> zeros;
-            steps += 1 + zeros;
+            steps += static_cast<uint32_t>(1 + zeros);
         } else {
 #ifdef NO_INT128
-            if (n < SAFE_THRESHOLD) {
+            // Windows: альтернативна перевірка overflow
+            if (n > SAFE_THRESHOLD) {  // ✅ ВИПРАВЛЕНО: > замість <
                 if (seed < overflow) overflow = seed;
-                n = 0; // Stop signal
+                n = 0;
                 return;
             }
             uint64_t next_val = n * 3 + 1;
             if (next_val > peak) peak = next_val;
             int zeros = fast_ctz(next_val);
             n = next_val >> zeros;
-            steps += 1 + zeros;
+            steps += static_cast<uint32_t>(1 + zeros);
 #else
+            // Unix/macOS: використовуємо __int128
             unsigned __int128 wide = (unsigned __int128)n * 3 + 1;
             if (wide > (unsigned __int128)INT64_MAX) {
                 if (seed < overflow) overflow = seed;
-                n = 0; // Stop signal
+                n = 0;
                 return;
             }
             uint64_t next_val = (uint64_t)wide;
             if (next_val > peak) peak = next_val;
             int zeros = fast_ctz(next_val);
             n = next_val >> zeros;
-            steps += 1 + zeros;
+            steps += static_cast<uint32_t>(1 + zeros);
 #endif
         }
     }
@@ -199,7 +194,7 @@ static inline void step_hybrid(uint64_t& n, uint32_t& steps, uint64_t& peak,
 
 void worker_static(uint64_t start, uint64_t end, int thread_id) {
     ThreadResult res;
-    const uint16_t* __restrict__ cache = collatz_cache.data();
+    const uint16_t* cache = collatz_cache.data();
 
     if ((start & 1) == 0) start++;
     if (start <= 1) start = 3;
@@ -229,7 +224,10 @@ void worker_static(uint64_t start, uint64_t end, int thread_id) {
         s4 += cache[n4]; s5 += cache[n5]; s6 += cache[n6]; s7 += cache[n7];
 
         // Update Histogram
-        auto h_inc = [&](uint32_t s) { res.histogram[s < HIST_SIZE ? s : HIST_SIZE-1]++; };
+        auto h_inc = [&](uint32_t s) {
+            size_t idx = s < HIST_SIZE ? s : HIST_SIZE-1;
+            res.histogram[idx]++;
+        };
         h_inc(s0); h_inc(s1); h_inc(s2); h_inc(s3);
         h_inc(s4); h_inc(s5); h_inc(s6); h_inc(s7);
 
@@ -251,15 +249,18 @@ void worker_static(uint64_t start, uint64_t end, int thread_id) {
         uint64_t p = n;
         while(n >= CACHE_LIMIT) {
             step_hybrid(n, s, p, i, res.first_overflow);
-            if (n == 0) break;  //Signal to stop on overflow
+            if (n == 0) break;
         }
-        s += cache[n];
-        res.histogram[s < HIST_SIZE ? s : HIST_SIZE-1]++;
-        if (s > res.max_length) { res.max_length = s; res.max_seed = i; }
-        if (p > res.max_peak) res.max_peak = p;
+        if (n > 0) {
+            s += cache[n];
+            size_t idx = s < HIST_SIZE ? s : HIST_SIZE-1;
+            res.histogram[idx]++;
+            if (s > res.max_length) { res.max_length = s; res.max_seed = i; }
+            if (p > res.max_peak) res.max_peak = p;
+        }
     }
 
-    // Merge Results with minimal locking
+    // Merge Results
     atomic_update_min(global_first_overflow, res.first_overflow);
     atomic_update_max(global_max_peak, res.max_peak);
 
@@ -272,26 +273,30 @@ void worker_static(uint64_t start, uint64_t end, int thread_id) {
         }
     }
 
-    // Only lock for histogram merge (shortest critical section)
     {
         std::lock_guard<std::mutex> lock(histogram_mutex);
         for (size_t j = 0; j < HIST_SIZE; ++j) {
             if (res.histogram[j] > 0) {
-                global_histogram_map[j] += res.histogram[j];
+                global_histogram_map[static_cast<uint32_t>(j)] += res.histogram[j];
             }
         }
     }
+
     std::ostringstream oss;
     oss << "  ✓ Worker " << thread_id << " finished.\n";
     write_to_log(oss.str());
 }
+
 // ================= MAIN =================
 
 std::string format_number(uint64_t num) {
     if (num == (uint64_t)INT64_MAX) return "NONE";
     std::string s = std::to_string(num);
-    int insertPosition = s.length() - 3;
-    while (insertPosition > 0) { s.insert(insertPosition, ","); insertPosition -= 3; }
+    int insertPosition = static_cast<int>(s.length()) - 3;
+    while (insertPosition > 0) {
+        s.insert(static_cast<size_t>(insertPosition), ",");
+        insertPosition -= 3;
+    }
     return s;
 }
 
@@ -302,21 +307,23 @@ int collatz_compute(uint64_t limit, CollatzResult& out, int countThread) {
     global_longest_len.store(0);
     global_histogram_map.clear();
     collatz_cache.clear();
+
     auto start = std::chrono::high_resolution_clock::now();
     build_cache_parallel();
 
-    //int hw = std::thread::hardware_concurrency();
     if (countThread == 0) countThread = 1;
     int num_threads = countThread;
-    if (limit < num_threads) num_threads = static_cast<unsigned int>(limit == 0 ? 1 : limit);
+    if (limit < static_cast<uint64_t>(num_threads)) {
+        num_threads = static_cast<int>(limit == 0 ? 1 : limit);
+    }
 
     std::vector<std::thread> threads;
-    uint64_t chunk = limit / num_threads;
+    uint64_t chunk = limit / static_cast<uint64_t>(num_threads);
     if (chunk == 0) chunk = 1;
 
-    for (unsigned int i = 0; i < num_threads; ++i) {
-        uint64_t t_start = i * chunk + 1;
-        uint64_t t_end = (i == num_threads - 1) ? limit : (i + 1) * chunk;
+    for (int i = 0; i < num_threads; ++i) {
+        uint64_t t_start = static_cast<uint64_t>(i) * chunk + 1;
+        uint64_t t_end = (i == num_threads - 1) ? limit : static_cast<uint64_t>(i + 1) * chunk;
         if (t_start > limit) break;
         if (t_end > limit) t_end = limit;
         threads.emplace_back(worker_static, t_start, t_end, i);
@@ -329,7 +336,7 @@ int collatz_compute(uint64_t limit, CollatzResult& out, int countThread) {
     CollatzResult r{};
     r.limit = limit;
     r.seconds = seconds;
-    r.throughput = seconds > 0 ? (limit / seconds / 1e9) : 0.0;
+    r.throughput = seconds > 0 ? (static_cast<double>(limit) / seconds / 1e9) : 0.0;
     r.first_overflow = global_first_overflow.load();
     r.longest_len = global_longest_len.load();
     r.longest_seed = global_longest_seed.load();
@@ -348,7 +355,7 @@ int collatz_compute_and_write_pipe_impl(int countThread, uint64_t limit, int res
 
     if (result_fd != -1) {
         ssize_t bytes_written = write(result_fd, &result, sizeof(result));
-        if (bytes_written != sizeof(result)) {
+        if (bytes_written != static_cast<ssize_t>(sizeof(result))) {
             close(result_fd);
             global_log_fd.store(-1, std::memory_order_relaxed);
             return -2;
@@ -356,14 +363,15 @@ int collatz_compute_and_write_pipe_impl(int countThread, uint64_t limit, int res
         close(result_fd);
     }
 
-
-    close(log_fd);
+    if (log_fd != -1) {
+        close(log_fd);
+    }
     global_log_fd.store(-1, std::memory_order_relaxed);
 
-    return 0;
+    return ret;
 }
 
-extern "C" int collatz_compute_and_write_pipe(int countThread,uint64_t limit, int result_fd, int log_fd)
+extern "C" int collatz_compute_and_write_pipe(int countThread, uint64_t limit, int result_fd, int log_fd)
 {
-    return collatz_compute_and_write_pipe_impl(countThread,limit, result_fd, log_fd);
+    return collatz_compute_and_write_pipe_impl(countThread, limit, result_fd, log_fd);
 }

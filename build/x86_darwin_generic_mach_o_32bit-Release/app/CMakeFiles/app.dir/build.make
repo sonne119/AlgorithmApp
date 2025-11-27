@@ -69,13 +69,20 @@ include app/CMakeFiles/app.dir/progress.make
 # Include the compile flags for this target's objects.
 include app/CMakeFiles/app.dir/flags.make
 
+app/app_autogen/timestamp: /opt/homebrew/share/qt/libexec/moc
+app/app_autogen/timestamp: /opt/homebrew/share/qt/libexec/uic
+app/app_autogen/timestamp: app/CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target app"
+	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app && /opt/homebrew/Cellar/cmake/4.2.0/bin/cmake -E cmake_autogen /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app/CMakeFiles/app_autogen.dir/AutogenInfo.json Release
+	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app && /opt/homebrew/Cellar/cmake/4.2.0/bin/cmake -E touch /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app/app_autogen/timestamp
+
 app/CMakeFiles/app.dir/codegen:
 .PHONY : app/CMakeFiles/app.dir/codegen
 
 app/CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o: app/CMakeFiles/app.dir/flags.make
 app/CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o: app/app_autogen/mocs_compilation.cpp
 app/CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o: app/CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object app/CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object app/CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o"
 	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT app/CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o -MF CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o -c /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app/app_autogen/mocs_compilation.cpp
 
 app/CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.i: cmake_force
@@ -89,7 +96,7 @@ app/CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.s: cmake_force
 app/CMakeFiles/app.dir/main.cpp.o: app/CMakeFiles/app.dir/flags.make
 app/CMakeFiles/app.dir/main.cpp.o: /Users/vitah/TaoGit/777/AlgorithmApp/app/main.cpp
 app/CMakeFiles/app.dir/main.cpp.o: app/CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object app/CMakeFiles/app.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object app/CMakeFiles/app.dir/main.cpp.o"
 	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT app/CMakeFiles/app.dir/main.cpp.o -MF CMakeFiles/app.dir/main.cpp.o.d -o CMakeFiles/app.dir/main.cpp.o -c /Users/vitah/TaoGit/777/AlgorithmApp/app/main.cpp
 
 app/CMakeFiles/app.dir/main.cpp.i: cmake_force
@@ -103,7 +110,7 @@ app/CMakeFiles/app.dir/main.cpp.s: cmake_force
 app/CMakeFiles/app.dir/mainwindow.cpp.o: app/CMakeFiles/app.dir/flags.make
 app/CMakeFiles/app.dir/mainwindow.cpp.o: /Users/vitah/TaoGit/777/AlgorithmApp/app/mainwindow.cpp
 app/CMakeFiles/app.dir/mainwindow.cpp.o: app/CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object app/CMakeFiles/app.dir/mainwindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object app/CMakeFiles/app.dir/mainwindow.cpp.o"
 	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT app/CMakeFiles/app.dir/mainwindow.cpp.o -MF CMakeFiles/app.dir/mainwindow.cpp.o.d -o CMakeFiles/app.dir/mainwindow.cpp.o -c /Users/vitah/TaoGit/777/AlgorithmApp/app/mainwindow.cpp
 
 app/CMakeFiles/app.dir/mainwindow.cpp.i: cmake_force
@@ -117,7 +124,7 @@ app/CMakeFiles/app.dir/mainwindow.cpp.s: cmake_force
 app/CMakeFiles/app.dir/CollatzRunner.cpp.o: app/CMakeFiles/app.dir/flags.make
 app/CMakeFiles/app.dir/CollatzRunner.cpp.o: /Users/vitah/TaoGit/777/AlgorithmApp/app/CollatzRunner.cpp
 app/CMakeFiles/app.dir/CollatzRunner.cpp.o: app/CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object app/CMakeFiles/app.dir/CollatzRunner.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object app/CMakeFiles/app.dir/CollatzRunner.cpp.o"
 	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT app/CMakeFiles/app.dir/CollatzRunner.cpp.o -MF CMakeFiles/app.dir/CollatzRunner.cpp.o.d -o CMakeFiles/app.dir/CollatzRunner.cpp.o -c /Users/vitah/TaoGit/777/AlgorithmApp/app/CollatzRunner.cpp
 
 app/CMakeFiles/app.dir/CollatzRunner.cpp.i: cmake_force
@@ -149,7 +156,7 @@ app/app: /opt/homebrew/lib/QtConcurrent.framework/Versions/A/QtConcurrent
 app/app: /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui
 app/app: /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
 app/app: app/CMakeFiles/app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable app"
 	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -160,7 +167,7 @@ app/CMakeFiles/app.dir/clean:
 	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app && $(CMAKE_COMMAND) -P CMakeFiles/app.dir/cmake_clean.cmake
 .PHONY : app/CMakeFiles/app.dir/clean
 
-app/CMakeFiles/app.dir/depend:
+app/CMakeFiles/app.dir/depend: app/app_autogen/timestamp
 	cd /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/vitah/TaoGit/777/AlgorithmApp /Users/vitah/TaoGit/777/AlgorithmApp/app /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app /Users/vitah/TaoGit/777/AlgorithmApp/build/x86_darwin_generic_mach_o_32bit-Release/app/CMakeFiles/app.dir/DependInfo.cmake "--color=$(COLOR)" app
 .PHONY : app/CMakeFiles/app.dir/depend
 

@@ -174,7 +174,7 @@ static inline void step_hybrid(uint64_t& n, uint32_t& steps, uint64_t& peak,
             n = next_val >> zeros;
             steps += static_cast<uint32_t>(1 + zeros);
 #else
-            // Unix/macOS: використовуємо __int128
+            // Unix/macOS
             unsigned __int128 wide = (unsigned __int128)n * 3 + 1;
             if (wide > (unsigned __int128)INT64_MAX) {
                 if (seed < overflow) overflow = seed;

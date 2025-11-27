@@ -162,7 +162,7 @@ static inline void step_hybrid(uint64_t& n, uint32_t& steps, uint64_t& peak,
             steps += static_cast<uint32_t>(1 + zeros);
         } else {
 #ifdef NO_INT128
-            // Windows: альтернативна перевірка overflow
+            // Windows
             if (n > SAFE_THRESHOLD) {
                 if (seed < overflow) overflow = seed;
                 n = 0;

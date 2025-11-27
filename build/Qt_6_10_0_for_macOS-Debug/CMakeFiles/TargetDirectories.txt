@@ -1,0 +1,12 @@
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Debug/CMakeFiles/edit_cache.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Debug/CMakeFiles/rebuild_cache.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Debug/lib/CMakeFiles/collatzlib.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Debug/lib/CMakeFiles/edit_cache.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Debug/lib/CMakeFiles/rebuild_cache.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Debug/lib/CMakeFiles/collatzlib_autogen_timestamp_deps.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Debug/lib/CMakeFiles/collatzlib_autogen.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Debug/app/CMakeFiles/app.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Debug/app/CMakeFiles/edit_cache.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Debug/app/CMakeFiles/rebuild_cache.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Debug/app/CMakeFiles/app_autogen_timestamp_deps.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Debug/app/CMakeFiles/app_autogen.dir

@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Release/cmake_install.cmake",
+		"/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Release/lib/cmake_install.cmake",
+		"/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Release/app/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

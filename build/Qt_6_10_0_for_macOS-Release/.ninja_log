@@ -1,0 +1,19 @@
+# ninja log v6
+1	8	1764278090268998606	CMakeFiles/clean.additional	9be989f27736b124
+8	12	1764278090275862617	clean	6213cbab821e9411
+1	32	1764278090323496067	lib/collatzlib_autogen/timestamp	6b33cc78819c3d37
+1	32	1764278090323496067	lib/collatzlib_autogen/mocs_compilation.cpp	6b33cc78819c3d37
+1	32	1764278090323496067	/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Release/lib/collatzlib_autogen/timestamp	6b33cc78819c3d37
+1	32	1764278090323496067	/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Release/lib/collatzlib_autogen/mocs_compilation.cpp	6b33cc78819c3d37
+33	51	1764278090328377022	lib/CMakeFiles/collatzlib.dir/collatzlib_autogen/mocs_compilation.cpp.o	6902cd4cccfc9ee
+33	550	1764278090328509814	lib/CMakeFiles/collatzlib.dir/collatz.cpp.o	3d25daae916eb15e
+552	587	1764278090847700815	lib/libcollatzlib.a	a21ab552e7d5b5c1
+587	2507	1764278092792663676	app/app_autogen/timestamp	b6f4c2a2d6da6bb9
+587	2507	1764278092792663676	app/app_autogen/mocs_compilation.cpp	b6f4c2a2d6da6bb9
+587	2507	1764278092792663676	/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Release/app/app_autogen/timestamp	b6f4c2a2d6da6bb9
+587	2507	1764278092792663676	/Users/vitah/TaoGit/777/AlgorithmApp/build/Qt_6_10_0_for_macOS-Release/app/app_autogen/mocs_compilation.cpp	b6f4c2a2d6da6bb9
+2507	2958	1764278092803324383	app/CMakeFiles/app.dir/CollatzRunner.cpp.o	9136de715fbe168a
+2507	3385	1764278092803103173	app/CMakeFiles/app.dir/main.cpp.o	9d5685f022ac60a3
+2507	3387	1764278092802922505	app/CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	5ddb91c638dcb612
+2507	4066	1764278092803220174	app/CMakeFiles/app.dir/mainwindow.cpp.o	825e7166f30243fd
+4067	4221	1764278094362627356	app/app	a8b880936b32ad31

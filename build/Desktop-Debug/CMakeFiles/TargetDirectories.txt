@@ -1,0 +1,10 @@
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Desktop-Debug/lib/CMakeFiles/collatzlib.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Desktop-Debug/lib/CMakeFiles/edit_cache.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Desktop-Debug/lib/CMakeFiles/rebuild_cache.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Desktop-Debug/app/CMakeFiles/app.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Desktop-Debug/app/CMakeFiles/edit_cache.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Desktop-Debug/app/CMakeFiles/rebuild_cache.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Desktop-Debug/app/CMakeFiles/app_autogen_timestamp_deps.dir
+/Users/vitah/TaoGit/777/AlgorithmApp/build/Desktop-Debug/app/CMakeFiles/app_autogen.dir

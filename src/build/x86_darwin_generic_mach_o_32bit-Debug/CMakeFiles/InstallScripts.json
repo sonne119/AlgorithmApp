@@ -1,9 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/Users/vitah/repo/algo/Algorithm/src/build/x86_darwin_generic_mach_o_32bit-Debug/cmake_install.cmake",
-		"/Users/vitah/repo/algo/Algorithm/src/build/x86_darwin_generic_mach_o_32bit-Debug/lib/cmake_install.cmake",
-		"/Users/vitah/repo/algo/Algorithm/src/build/x86_darwin_generic_mach_o_32bit-Debug/app/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

@@ -1,9 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/Users/vitah/repo/algo/Algorithm/src/build/Qt_6_10_0_for_macOS-Debug/cmake_install.cmake",
-		"/Users/vitah/repo/algo/Algorithm/src/build/Qt_6_10_0_for_macOS-Debug/lib/cmake_install.cmake",
-		"/Users/vitah/repo/algo/Algorithm/src/build/Qt_6_10_0_for_macOS-Debug/app/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

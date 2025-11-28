@@ -373,15 +373,15 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 2,
-			"id" : "collatzlib::@306ed2d68c6501e8728f"
-		},
-		{
 			"id" : "app_autogen_timestamp_deps::@5f5a17c01335469806cb"
 		},
 		{
 			"backtrace" : 0,
 			"id" : "app_autogen::@5f5a17c01335469806cb"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "collatzlib::@306ed2d68c6501e8728f"
 		}
 	],
 	"id" : "app::@5f5a17c01335469806cb",
@@ -492,17 +492,17 @@
 	"orderDependencies" : 
 	[
 		{
-			"id" : "Qt6::moc::@6890427a1f51a3e7e1df"
-		},
-		{
-			"id" : "Qt6::uic::@6890427a1f51a3e7e1df"
-		},
-		{
 			"id" : "app_autogen_timestamp_deps::@5f5a17c01335469806cb"
 		},
 		{
 			"backtrace" : 0,
 			"id" : "app_autogen::@5f5a17c01335469806cb"
+		},
+		{
+			"id" : "Qt6::moc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "Qt6::uic::@6890427a1f51a3e7e1df"
 		}
 	],
 	"paths" : 

@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <functional>
 #include <limits>
+#include <thread>
 #include "../lib/collatz.h"
 
 class CollatzRunner {
@@ -13,7 +14,7 @@ public:
 
     uint64_t limit = 9000000000;
 
-    int threadCount = 12;
+    unsigned threadCount =  std::thread::hardware_concurrency();
 
     using LogCallback = std::function<void(const std::string&)>;
 

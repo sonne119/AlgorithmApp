@@ -32,7 +32,7 @@ if(MSVC)
             /fp:fast
         )
         set_target_properties(collatzlib PROPERTIES
-            STATIC_LIBRARY_FLAGS
+            STATIC_LIBRARY_FLAGS "/LTCG"
         )
     endif()
 else()

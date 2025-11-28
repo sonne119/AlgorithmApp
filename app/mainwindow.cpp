@@ -28,14 +28,15 @@ MainWindow::MainWindow(QWidget *parent)
     ui->textEdit->append("Collatz Ready\n");
 
     connect(ui->Exit, &QPushButton::clicked, this, &MainWindow::exitClicked);
-    connect(ui->verticalSlider, &QSlider::valueChanged, this, [this](int value) {
-        ui->sliderLabel->setText(QString("Threads: %1").arg(value));
-    });
+
     connect(ui->verticalSlider, &QSlider::valueChanged,
             this, &MainWindow::sliderValueChanged);
     connect(this, &MainWindow::logMessageReceived,
             this, &MainWindow::appendLogToUI,
             Qt::QueuedConnection);
+
+    ui->verticalSlider->setValue(runner.threadCount);
+    sliderValueChanged(runner.threadCount);
 }
 
 void MainWindow::sliderValueChanged(int value)

@@ -5,7 +5,7 @@
 		"commands" : [],
 		"files" : 
 		[
-			"app/CMakeLists.txt"
+			"lib/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -22,28 +22,28 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "app_autogen_timestamp_deps::@5f5a17c01335469806cb"
+			"id" : "collatzlib_autogen_timestamp_deps::@306ed2d68c6501e8728f"
 		}
 	],
-	"id" : "app_autogen::@5f5a17c01335469806cb",
+	"id" : "collatzlib_autogen::@306ed2d68c6501e8728f",
 	"isGeneratorProvided" : true,
-	"name" : "app_autogen",
+	"name" : "collatzlib_autogen",
 	"orderDependencies" : 
 	[
+		{
+			"id" : "collatzlib_autogen_timestamp_deps::@306ed2d68c6501e8728f"
+		},
 		{
 			"id" : "Qt6::moc::@6890427a1f51a3e7e1df"
 		},
 		{
 			"id" : "Qt6::uic::@6890427a1f51a3e7e1df"
-		},
-		{
-			"id" : "app_autogen_timestamp_deps::@5f5a17c01335469806cb"
 		}
 	],
 	"paths" : 
 	{
-		"build" : "app",
-		"source" : "app"
+		"build" : "lib",
+		"source" : "lib"
 	},
 	"sourceGroups" : 
 	[
@@ -68,19 +68,19 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_10_0_for_macOS-Release/app/CMakeFiles/app_autogen",
+			"path" : "build/Qt_6_10_0_for_macOS-Release/lib/CMakeFiles/collatzlib_autogen",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_10_0_for_macOS-Release/app/CMakeFiles/app_autogen.rule",
+			"path" : "build/Qt_6_10_0_for_macOS-Release/lib/CMakeFiles/collatzlib_autogen.rule",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_10_0_for_macOS-Release/app/app_autogen/timestamp.rule",
+			"path" : "build/Qt_6_10_0_for_macOS-Release/lib/collatzlib_autogen/timestamp.rule",
 			"sourceGroupIndex" : 1
 		}
 	],

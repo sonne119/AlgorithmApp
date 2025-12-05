@@ -10,16 +10,20 @@ endif()
 
 set(COLLATZ_SOURCES
     collatz.cpp
+    collatz_simd.cpp
 )
 
 set(COLLATZ_HEADERS
     collatz.h
     platform_compat.h
+    collatz_simd.h
 )
 
 add_library(collatzlib STATIC
     ${COLLATZ_SOURCES}
     ${COLLATZ_HEADERS}
+    ##collatz_simd.cpp
+    ##collatz_simd.h
 )
 
 if(MSVC)

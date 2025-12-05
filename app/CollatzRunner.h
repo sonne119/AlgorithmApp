@@ -4,8 +4,8 @@
 #include <cstdint>
 #include <functional>
 #include <limits>
-#include <thread>
 #include "../lib/collatz.h"
+#include "../lib/collatz_simd.h"
 
 class CollatzRunner {
 public:
@@ -13,12 +13,11 @@ public:
     ~CollatzRunner();
 
     uint64_t limit = 9000000000;
-
-    unsigned threadCount =  std::thread::hardware_concurrency();
+    int threadCount = 12;
 
     using LogCallback = std::function<void(const std::string&)>;
-
     CollatzResult Compute(LogCallback logCallback = nullptr);
+    CollatzResult Compute_simd(LogCallback logCallback = nullptr);
 
 private:
     CollatzResult r{};

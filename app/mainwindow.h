@@ -2,9 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QMutex>
 #include "CollatzRunner.h"
-
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,15 +19,15 @@ public:
 signals:
     void logMessageReceived(const QString& message);
 
-
 private slots:
     void on_start_clicked();
     void exitClicked();
-    void appendLogToUI(const QString& message);
     void sliderValueChanged(int value);
+    void appendLogToUI(const QString& message);
 
 private:
     Ui::MainWindow *ui;
     CollatzRunner runner;
+    int algorithmChoice = 0; // 0=Standard(8-Way), 1=SIMD, 2=16-Way
 };
 #endif // MAINWINDOW_H

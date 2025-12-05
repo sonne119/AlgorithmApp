@@ -28,15 +28,27 @@ MainWindow::MainWindow(QWidget *parent)
     ui->textEdit->append("Collatz Ready\n");
 
     connect(ui->Exit, &QPushButton::clicked, this, &MainWindow::exitClicked);
-
+    connect(ui->verticalSlider, &QSlider::valueChanged, this, [this](int value) {
+        ui->sliderLabel->setText(QString("Threads: %1").arg(value));
+    });
     connect(ui->verticalSlider, &QSlider::valueChanged,
             this, &MainWindow::sliderValueChanged);
     connect(this, &MainWindow::logMessageReceived,
             this, &MainWindow::appendLogToUI,
             Qt::QueuedConnection);
 
-    ui->verticalSlider->setValue(runner.threadCount);
-    sliderValueChanged(runner.threadCount);
+    connect(ui->radioSIMD, &QRadioButton::toggled, this, [this](bool checked) {
+        if (checked) {
+            algorithmChoice = 1;
+            ui->textEdit->append("Algorithm: SIMD Vector\n");
+        }
+    });
+    connect(ui->radio16Way, &QRadioButton::toggled, this, [this](bool checked) {
+        if (checked) {
+            algorithmChoice = 2;
+            ui->textEdit->append("Algorithm: 16-Way Parallel\n");
+        }
+    });
 }
 
 void MainWindow::sliderValueChanged(int value)
@@ -48,6 +60,7 @@ void MainWindow::sliderValueChanged(int value)
 void MainWindow::appendLogToUI(const QString& message)
 {
     ui->textEdit->append(message);
+
     QTextCursor cursor = ui->textEdit->textCursor();
     cursor.movePosition(QTextCursor::End);
     ui->textEdit->setTextCursor(cursor);
@@ -59,7 +72,11 @@ void MainWindow::on_start_clicked()
 
     ui->start->setEnabled(false);
     ui->comboBox->setEnabled(false);
-    ui->textEdit->append(QString("\nComputing %1 numbers...\n").arg(count));
+    ui->radioSIMD->setEnabled(false);
+    ui->radio16Way->setEnabled(false);
+    QString algoName = (algorithmChoice == 1) ? "SIMD Vector" : 
+                       (algorithmChoice == 2) ? "16-Way Parallel" : "8-Way Parallel";
+    ui->textEdit->append(QString("\nComputing %1 numbers using %2 algorithm...\n").arg(count).arg(algoName));
 
     auto *watcher = new QFutureWatcher<CollatzResult>(this);
     connect(watcher, &QFutureWatcher<CollatzResult>::finished, this, [this, watcher]() {
@@ -83,17 +100,38 @@ void MainWindow::on_start_clicked()
         ui->textEdit->append(output);
         ui->start->setEnabled(true);
         ui->comboBox->setEnabled(true);
+        ui->radioSIMD->setEnabled(true);
+        ui->radio16Way->setEnabled(true);
         watcher->deleteLater();
     });
 
     runner.limit = count;
     QFuture<CollatzResult> future = QtConcurrent::run([this]() {
-        return runner.Compute([this](const std::string& msg) {
-            QString qmsg = QString::fromStdString(msg);
-            QMetaObject::invokeMethod(this, "appendLogToUI",
-                                      Qt::QueuedConnection,
-                                      Q_ARG(QString, qmsg));
-        });
+        if (algorithmChoice == 1) {
+            // SIMD Vector
+            return runner.Compute_simd([this](const std::string& msg) {
+                QString qmsg = QString::fromStdString(msg);
+                QMetaObject::invokeMethod(this, "appendLogToUI",
+                                          Qt::QueuedConnection,
+                                          Q_ARG(QString, qmsg));
+            });
+        } else if (algorithmChoice == 2) {
+            // 16-Way Parallel (currently uses same as 8-Way)
+            return runner.Compute([this](const std::string& msg) {
+                QString qmsg = QString::fromStdString(msg);
+                QMetaObject::invokeMethod(this, "appendLogToUI",
+                                          Qt::QueuedConnection,
+                                          Q_ARG(QString, qmsg));
+            });
+        } else {
+            // 8-Way Parallel (default)
+            return runner.Compute([this](const std::string& msg) {
+                QString qmsg = QString::fromStdString(msg);
+                QMetaObject::invokeMethod(this, "appendLogToUI",
+                                          Qt::QueuedConnection,
+                                          Q_ARG(QString, qmsg));
+            });
+        }
     });
 
     watcher->setFuture(future);
